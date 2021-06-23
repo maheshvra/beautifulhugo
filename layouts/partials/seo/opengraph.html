@@ -4,6 +4,9 @@
 {{- with .Description | default .Params.subtitle | default .Summary }}
 <meta property="og:description" content="{{ . }}">
 {{- end }}
+{{- with .Description | default .Params.subtitle | default .Summary }}
+  <meta property="og:description" content="{{ . | truncate 200 }}">
+{{- end }}
 {{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
 <meta property="og:image" content="{{ . | absURL }}" />
 {{- end }}
